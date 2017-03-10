@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.skylark.xuelong_li.howold.MainActivity">
+
+    <Button
+        android:id="@+id/btn_get_image"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Image" />
+
+    <Button
+        android:paddingRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/btn_get_image"
+        android:text="Detect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_detect"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_tip"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/btn_detect"
+        android:layout_alignTop="@id/btn_detect"
+        android:gravity="center"/>
+    <ImageView
+
+        android:id="@+id/iv_iamge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/btn_get_image"
+        android:src="@drawable/t4"/>
+    <!-- 默认时不显示，只有在点击decete按钮后才显示progressbar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:clickable="true"
+        android:id="@+id/fl_waiting">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+        <!-- 脸部box上方的气泡 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/male"
+            android:background="@drawable/hint"
+            android:id="@+id/tv_age_and_gender"
+            android:text="18"
+            android:textSize="22sp"
+            android:textColor="#ffff00ff"
+            android:gravity="center"
+            android:visibility="invisible"/>
+    </FrameLayout>
+
+</RelativeLayout>
